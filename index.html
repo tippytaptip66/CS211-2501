@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mt. Mayon Tourist Spot</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h2>Explore Mt. Mayon</h2>
+    <div class="nav-buttons">
+      <button onclick="scrollToSection('info')">About</button>
+      <button onclick="scrollToSection('gallery')">Gallery</button>
+    </div>
+  </nav>
+
+  <div class="container" id="info">
+    <h1>Welcome to Mt. Mayon</h1>
+    <div class="info-box">
+      <p>
+        Mount Mayon, located in Albay, Philippines, is famous for its perfectly symmetrical cone shape. 
+        Known as the “World’s Most Perfect Cone,” it rises majestically to 2,463 meters. 
+        Aside from its breathtaking beauty, Mayon is an active volcano that holds great cultural and historical significance. 
+        Tourists enjoy sightseeing, hiking, and capturing its stunning view, especially at sunrise or sunset.
+      </p>
+    </div>
+
+    <div class="button-group">
+      <button onclick="scrollToSection('gallery')">View Gallery</button>
+      <button onclick="alert('Enjoy your Mt. Mayon virtual tour!')">Start Tour</button>
+    </div>
+  </div>
+
+  <div class="gallery" id="gallery">
+    <h2>Mt. Mayon Gallery</h2>
+    <p class="gallery-description">
+      Scroll through these breathtaking photos showcasing the natural beauty and majestic view of Mount Mayon.
+    </p>
+    <div class="images">
+      <img src="mayon1.jpg" alt="Mt. Mayon View 1" />
+      <img src="mayon2.jpg" alt="Mt. Mayon View 2" />
+      <img src="mayon3.jpg" alt="Mt. Mayon View 3" />
+      <img src="mayon4.jpg" alt="Mt. Mayon View 4" />
+      <img src="mayon5.jpg" alt="Mt. Mayon View 5" />
+    </div>
+  </div>
+
+  <script>
+    // Smooth scroll to section
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Gallery fade-in effect on scroll
+    window.addEventListener('scroll', function() {
+      const gallery = document.querySelector('.gallery');
+      const galleryTop = gallery.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (galleryTop < windowHeight - 100) {
+        gallery.classList.add('visible');
+      }
+    });
+  </script>
+</body>
+</html>
