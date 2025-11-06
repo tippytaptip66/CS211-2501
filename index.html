@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mt. Mayon Tourist Spot</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Popup Modal -->
   <div id="welcomeModal" class="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -26,48 +27,66 @@
     </div>
   </div>
 
+  <!-- Scrollable Background Sections -->
   <section class="hero" style="background-image: url('Mayon1.jpg');">
-    <div class="overlay">
+    <div class="overlay fade-in">
       <h2>Majestic Mt. Mayon</h2>
       <p>The world’s most perfectly shaped volcano</p>
     </div>
   </section>
 
   <section class="hero" style="background-image: url('Mayon2.jpg');">
-    <div class="overlay">
+    <div class="overlay fade-in">
       <h2>Breathtaking Views</h2>
       <p>Witness the beauty of nature from every angle</p>
     </div>
   </section>
 
   <section class="hero" style="background-image: url('Mayon3.jpg');">
-    <div class="overlay">
+    <div class="overlay fade-in">
       <h2>Adventure Awaits</h2>
       <p>Hike, explore, and enjoy scenic adventures</p>
     </div>
   </section>
 
   <section class="hero" style="background-image: url('Mayon4.jpg');">
-    <div class="overlay">
+    <div class="overlay fade-in">
       <h2>Nature’s Wonder</h2>
       <p>Experience serenity and the art of the earth</p>
     </div>
   </section>
 
   <section class="hero" style="background-image: url('Mayon5.jpg');">
-    <div class="overlay">
+    <div class="overlay fade-in">
       <h2>Visit Albay</h2>
       <p>Where culture, beauty, and nature meet</p>
     </div>
   </section>
 
   <script>
+    // Show modal on load
     window.onload = () => {
       document.getElementById('welcomeModal').style.display = 'flex';
     };
+
+    // Close modal
     function closeModal() {
       document.getElementById('welcomeModal').style.display = 'none';
     }
+
+    // Fade-in effect when scrolling
+    const sections = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
   </script>
 
 </body>
