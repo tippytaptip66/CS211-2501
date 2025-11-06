@@ -10,10 +10,11 @@ body, html {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  transition: background 1s ease-in-out;
 }
 
 .overlay {
@@ -23,6 +24,14 @@ body, html {
   padding: 40px;
   border-radius: 15px;
   max-width: 600px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.overlay.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .overlay h2 {
@@ -34,6 +43,7 @@ body, html {
   font-size: 1.2em;
 }
 
+/* Popup Modal */
 .modal {
   display: none;
   position: fixed;
@@ -101,6 +111,7 @@ body, html {
   background-color: #a83c3c;
 }
 
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
