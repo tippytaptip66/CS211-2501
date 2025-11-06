@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Mt. Mayon</title>
+  <title>Mt. Mayon Tourist Spot</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,24 +26,43 @@
     </div>
   </div>
 
-  <div class="slideshow">
+  <section class="hero" style="background-image: url('Mayon1.jpg');">
     <div class="overlay">
       <h2>Majestic Mt. Mayon</h2>
-      <p>Experience the beauty of nature’s perfect cone</p>
+      <p>The world’s most perfectly shaped volcano</p>
     </div>
-  </div>
+  </section>
+
+  <section class="hero" style="background-image: url('Mayon2.jpg');">
+    <div class="overlay">
+      <h2>Breathtaking Views</h2>
+      <p>Witness the beauty of nature from every angle</p>
+    </div>
+  </section>
+
+  <section class="hero" style="background-image: url('Mayon3.jpg');">
+    <div class="overlay">
+      <h2>Adventure Awaits</h2>
+      <p>Hike, explore, and enjoy scenic adventures</p>
+    </div>
+  </section>
+
+  <section class="hero" style="background-image: url('Mayon4.jpg');">
+    <div class="overlay">
+      <h2>Nature’s Wonder</h2>
+      <p>Experience serenity and the art of the earth</p>
+    </div>
+  </section>
+
+  <section class="hero" style="background-image: url('Mayon5.jpg');">
+    <div class="overlay">
+      <h2>Visit Albay</h2>
+      <p>Where culture, beauty, and nature meet</p>
+    </div>
+  </section>
 
   <script>
-    const backgrounds = ["Mayon1.jpg", "Mayon2.jpg", "Mayon3.jpg", "Mayon4.jpg", "Mayon5.jpg"];
-    let current = 0;
-    function changeBackground() {
-      const slideshow = document.querySelector('.slideshow');
-      slideshow.style.backgroundImage = `url('${backgrounds[current]}')`;
-      current = (current + 1) % backgrounds.length;
-    }
-    setInterval(changeBackground, 5000);
     window.onload = () => {
-      changeBackground();
       document.getElementById('welcomeModal').style.display = 'flex';
     };
     function closeModal() {
@@ -53,4 +72,3 @@
 
 </body>
 </html>
-
